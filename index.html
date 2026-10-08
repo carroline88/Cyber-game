@@ -13,7 +13,10 @@
     <main class="game-wrapper">
       <header class="game-header">
         <h1>Cyber Pulse</h1>
-        <p class="subtitle">Hack the sequence before the timer runs out!</p>
+        <p class="subtitle">Klicka på noden som lyser innan tiden rinner ut!</p>
+        <div class="time-bar-container" aria-hidden="true">
+          <div id="time-progress" class="time-bar"></div>
+        </div>
       </header>
 
       
@@ -24,7 +27,11 @@
         </div>
         <div class="stat-box">
           <h2>Time Left</h2>
-          <p id="timer-display">10s</p>
+          <p id="timer-display">6.0s</p>
+        </div>
+        <div class="stat-box">
+          <h2>Streak</h2>
+          <p id="combo-display">0x</p>
         </div>
         <div class="stat-box">
           <h2>Best</h2>

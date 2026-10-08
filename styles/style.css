@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0d1117;
+  color: #f0f6fc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 1rem;
+}
+
+.game-wrapper {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+}
+
+.game-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.8rem;
+  color: #58a6ff;
+}
+
+.subtitle {
+  margin: 0 0 1.5rem 0;
+  color: #8b949e;
+  font-size: 0.95rem;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+  background-color: #0d1117;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.stat-box h2 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #8b949e;
+  margin: 0 0 0.25rem 0;
+}
+
+.stat-box p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.node-btn {
+  height: 110px;
+  border: 2px solid #30363d;
+  border-radius: 12px;
+  background-color: #21262d;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.node-btn:hover {
+  transform: translateY(-2px);
+  border-color: #8b949e;
+}
+
+
+.node-btn.active {
+  background-color: #238636;
+  border-color: #3fb950;
+  box-shadow: 0 0 16px rgba(63, 185, 80, 0.4);
+}
+
+.primary-btn {
+  background-color: #1f6feb;
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.primary-btn:hover {
+  background-color: #388bfd;
+  transform: translateY(-1px);
+}
+
+.status-msg {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #8b949e;
+}

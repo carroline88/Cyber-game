@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cyber Hacker - Speed Game</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+  <body>
+
+    <main class="game-wrapper">
+      <header class="game-header">
+        <h1>Cyber Pulse</h1>
+        <p class="subtitle">Hack the sequence before the timer runs out!</p>
+      </header>
+
+      
+      <section class="dashboard">
+        <div class="stat-box">
+          <h2>Score</h2>
+          <p id="score-display">0</p>
+        </div>
+        <div class="stat-box">
+          <h2>Time Left</h2>
+          <p id="timer-display">10s</p>
+        </div>
+      </section>
+
+      
+      <section class="grid-container" aria-label="Game board">
+        <button class="node-btn" id="node-0" data-index="0" aria-label="Node 1"></button>
+        <button class="node-btn" id="node-1" data-index="1" aria-label="Node 2"></button>
+        <button class="node-btn" id="node-2" data-index="2" aria-label="Node 3"></button>
+        <button class="node-btn" id="node-3" data-index="3" aria-label="Node 4"></button>
+      </section>
+
+      
+      <footer class="controls">
+        <button id="start-btn" class="primary-btn">Initialize Hack</button>
+        <p id="message" class="status-msg">Press start to begin.</p>
+      </footer>
+    </main>
+
+    
+    <script src="js/game.js"></script>
+  </body>
+</html>

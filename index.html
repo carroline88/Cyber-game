@@ -1,64 +1,67 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cyber Hacker - Speed Game</title>
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="icon" href="data:,">
-  </head>
-  <body>
+</head>
+
+<body>
 
     <main class="game-wrapper">
-      <header class="game-header">
-        <h1>Cyber Pulse</h1>
-        <p class="subtitle">Click the node that lights up before the timer runs out!</p>
-        <div class="time-bar-container" aria-hidden="true">
-          <div id="time-progress" class="time-bar"></div>
-        </div>
-      </header>
+        <header class="game-header">
+            <h1>Cyber Pulse</h1>
+            <p class="subtitle">Click the node that lights up before the timer runs out!</p>
+            <div class="time-bar-container" aria-hidden="true">
+                <div id="time-progress" class="time-bar"></div>
+            </div>
+        </header>
 
-      
-      <section class="dashboard">
-        <div class="stat-box">
-          <h2>Score</h2>
-          <p id="score-display">0</p>
-        </div>
-        <div class="stat-box">
-          <h2>Time Left</h2>
-          <p id="timer-display">6.0s</p>
-        </div>
-        <div class="stat-box">
-          <h2>Streak</h2>
-          <p id="combo-display">0x</p>
-        </div>
-        <div class="stat-box">
-          <h2>Best</h2>
-          <p id="highscore-display">0</p>
-        </div>
-      </section>
 
-      <section class="grid-container" aria-label="Game board">
-        <button class="node-btn" id="node-0" data-index="0" aria-label="Node 1"></button>
-        <button class="node-btn" id="node-1" data-index="1" aria-label="Node 2"></button>
-        <button class="node-btn" id="node-2" data-index="2" aria-label="Node 3"></button>
-        <button class="node-btn" id="node-3" data-index="3" aria-label="Node 4"></button>
-        <button class="node-btn" id="node-4" data-index="4" aria-label="Node 5"></button>
-        <button class="node-btn" id="node-5" data-index="5" aria-label="Node 6"></button>
-        <button class="node-btn" id="node-6" data-index="6" aria-label="Node 7"></button>
-        <button class="node-btn" id="node-7" data-index="7" aria-label="Node 8"></button>
-        <button class="node-btn" id="node-8" data-index="8" aria-label="Node 9"></button>
-      </section>
+        <section class="dashboard">
+            <div class="stat-box">
+                <h2>Score</h2>
+                <p id="score-display">0</p>
+            </div>
+            <div class="stat-box">
+                <h2>Time Left</h2>
+                <p id="timer-display">6.0s</p>
+            </div>
+            <div class="stat-box">
+                <h2>Streak</h2>
+                <p id="combo-display">0x</p>
+            </div>
+            <div class="stat-box">
+                <h2>Best</h2>
+                <p id="highscore-display">0</p>
+            </div>
+        </section>
 
-      
-      <footer class="controls">
-        <button id="start-btn" class="primary-btn">Initialize Hack</button>
-        <p id="message" class="status-msg">Press start to begin.</p>
-      </footer>
+        <section class="grid-container" aria-label="Game board">
+            <button class="node-btn" id="node-0" data-index="0" aria-label="Node 1"></button>
+            <button class="node-btn" id="node-1" data-index="1" aria-label="Node 2"></button>
+            <button class="node-btn" id="node-2" data-index="2" aria-label="Node 3"></button>
+            <button class="node-btn" id="node-3" data-index="3" aria-label="Node 4"></button>
+            <button class="node-btn" id="node-4" data-index="4" aria-label="Node 5"></button>
+            <button class="node-btn" id="node-5" data-index="5" aria-label="Node 6"></button>
+            <button class="node-btn" id="node-6" data-index="6" aria-label="Node 7"></button>
+            <button class="node-btn" id="node-7" data-index="7" aria-label="Node 8"></button>
+            <button class="node-btn" id="node-8" data-index="8" aria-label="Node 9"></button>
+        </section>
+
+
+        <footer class="controls">
+            <button id="start-btn" class="primary-btn">Initialize Hack</button>
+            <p id="message" class="status-msg">Press start to begin.</p>
+        </footer>
     </main>
 
-    
+
     <script src="js/game.js"></script>
-  </body>
+</body>
+
 </html>

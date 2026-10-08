@@ -2,8 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const startBtn = document.getElementById("start-btn");
   const scoreDisplay = document.getElementById("score-display");
   const timerDisplay = document.getElementById("timer-display");
+  const highscoreDisplay = document.getElementById("highscore-display");
   const message = document.getElementById("message");
   const nodes = document.querySelectorAll(".node-btn");
+  const gameWrapper = document.querySelector(".game-wrapper");
 
   let score = 0;
   let activeNodeIndex = null;
@@ -11,9 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
   let timerInterval = null;
   let isPlaying = false;
 
+  
+  let highScore = parseInt(localStorage.getItem("cyberPulseHighScore"), 10) || 0;
+  highscoreDisplay.textContent = highScore;
+
   function activateRandomNode() {
     nodes.forEach(node => node.classList.remove("active"));
-    
     
     let nextIndex;
     do {
@@ -35,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     activateRandomNode();
 
-    
     clearInterval(timerInterval);
     timerInterval = setInterval(() => {
       timeLeft -= 0.1;
@@ -55,7 +59,16 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(timerInterval);
     nodes.forEach(node => node.classList.remove("active"));
     startBtn.disabled = false;
-    message.textContent = `Breach Terminated! Final Score: ${score}`;
+
+    
+    if (score > highScore) {
+      highScore = score;
+      localStorage.setItem("cyberPulseHighScore", highScore);
+      highscoreDisplay.textContent = highScore;
+      message.textContent = `New Record! Final Score: ${score}`;
+    } else {
+      message.textContent = `Breach Terminated! Final Score: ${score}`;
+    }
   }
 
   nodes.forEach(node => {
@@ -68,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
         score += 1;
         scoreDisplay.textContent = score;
 
-        
         const bonusTime = Math.max(0.4, 0.9 - score * 0.015);
         timeLeft = Math.min(timeLeft + bonusTime, 6.0);
         timerDisplay.textContent = `${timeLeft.toFixed(1)}s`;
@@ -76,6 +88,10 @@ document.addEventListener("DOMContentLoaded", () => {
         activateRandomNode();
       } else {
         
+        gameWrapper.classList.remove("shake");
+        void gameWrapper.offsetWidth; // Trigga om CSS-animationen
+        gameWrapper.classList.add("shake");
+
         timeLeft = Math.max(timeLeft - 1.2, 0);
         timerDisplay.textContent = `${timeLeft.toFixed(1)}s`;
         if (timeLeft === 0) endGame();
